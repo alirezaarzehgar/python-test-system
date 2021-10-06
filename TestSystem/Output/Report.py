@@ -19,8 +19,6 @@ class Report:
                 )
             )
 
-            exit(1)
-
 
     def verbose(self, function: callable) -> None:
         if self._verbose:
