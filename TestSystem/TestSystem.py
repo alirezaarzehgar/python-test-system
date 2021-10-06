@@ -1,7 +1,6 @@
 from typing import List
 
-from TestSystem.Output.Color import Color
-from . import Report, Runable
+from . import Report, Runable, Color
 
 
 class TestSystem():
