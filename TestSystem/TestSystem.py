@@ -6,12 +6,12 @@ from . import Report, Runable
 
 class TestSystem():
     def __init__(self) -> None:
-        self.report = Report(Color, True)
-        pass
+        color = Color()
+        self.report = Report(color, True)
 
     def iterate(self, classes: List[Runable]):
         for className in classes:
-            if className != None:
+            if hasattr(className, "run"):
                 className.run()
             else:
-                pass
+                self.report.printError("has no attribute 'run'")
