@@ -1,3 +1,4 @@
-from TestSystem.Runable import Runable
-from TestSystem.Output.Report import Report
-from TestSystem.TestSystem import TestSystem
+from .Runable import Runable
+from .Output.Report import Report
+from .Output.Color import Color
+from .TestSystem import TestSystem
