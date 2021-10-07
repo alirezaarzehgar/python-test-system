@@ -1,5 +1,5 @@
 from typing import Text
-from .Color import Color
+from .color import Color
 
 
 class Report:
@@ -8,8 +8,7 @@ class Report:
 
         self._verbose = verbose
 
-
-    def printError(self, retval: Text) -> None:
+    def print_error(self, retval: Text) -> None:
         if type(retval) is Text:
             print(
                 "{}[ERROR]{} {}".format(
@@ -18,7 +17,6 @@ class Report:
                     retval
                 )
             )
-
 
     def verbose(self, function: callable) -> None:
         if self._verbose:
@@ -30,8 +28,7 @@ class Report:
                 )
             )
 
-
-    def handleErrors(self, retval: Text, function: callable) -> None:
-        self.printError(retval)
+    def handle_errors(self, retval: Text, function: callable) -> None:
+        self.print_error(retval)
 
         self.verbose(function)

@@ -5,7 +5,6 @@ class Color:
     def __init__(self) -> None:
         self.end: Text = "\033[0m"
 
-
     class __Color:
         def __init__(self, opacity: int) -> None:
             self.__opacity: int = opacity
@@ -29,26 +28,21 @@ class Color:
         def __formatColor(self, colorCode: int) -> Text:
             return self.base.format(self.__opacity, colorCode)
 
-
     @property
     def light(self) -> Text:
         return self.__Color(9)
-
 
     @property
     def dark(self) -> Text:
         return self.__Color(3)
 
-
     @property
     def error(self) -> Text:
         return self.light.red
 
-
     @property
     def warning(self) -> Text:
         return self.light.cyan
-
 
     @property
     def success(self) -> Text:
