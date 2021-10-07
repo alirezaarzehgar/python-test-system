@@ -11,12 +11,12 @@ class TestSystem():
     def iterate(self, classes: List[Runable]) -> List[bool]:
         result = []
 
-        for className in classes:
-            if className != None and hasattr(className, "run"):
+        for class_name in classes:
+            if class_name != None and hasattr(class_name, "run"):
                 ret = None
 
                 try:
-                    ret = className.run()
+                    ret = class_name.run()
                 except:
                     ret = False
 
@@ -26,7 +26,7 @@ class TestSystem():
                 result.append(ret)
 
             else:
-                self.report.printError("has no attribute 'run'")
+                self.report.print_error("has no attribute 'run'")
 
                 result.append(False)
 
